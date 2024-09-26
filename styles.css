@@ -22,6 +22,29 @@ li {
   list-style-type: none;
 }
 
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#about-me {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* background-color: rgba(0, 0, 0, 0.4); */
+}
+
+.row {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 /*
 
   THIS IS THE NAVIGATION BAR 
@@ -34,11 +57,11 @@ nav {
   min-height: 70px;
   width: 100%;
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px 0;
+  padding: 8px 0;
 }
 
 .personal__logo {
@@ -66,4 +89,84 @@ nav {
 
 .nav__link--anchor--primary:hover {
   background-color:  rgb(38, 38, 224);
+}
+
+/*
+
+  THIS IS THE FLEX-1 DIV
+      ||||||
+      VVVVVV
+
+*/
+
+.flex-1 {
+  flex: 1;
+}
+
+.about-me__info--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.about-me__info--title {
+  font-size: 36px;
+}
+
+.about-me__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-me__info--para {
+  font-size: 18px;
+  margin: 8px 85px;
+}
+
+.about-me__picture {
+  width: 100%;
+}
+
+.text-purple {
+  color: var(--my-blue);
+}
+
+.about-me__picture--mask {
+  width: 100px;
+  height: 100px;
+  border-radius: 70%;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.about-me__img {
+  width: 300px;
+}
+
+.about-me__link {
+  font-size: 20px;
+  color: var(--my-black);
+  text-decoration: none;
+  padding: 0 4px;
+}
+
+.about-me__link:hover {
+  color: var(--my-blue);
+}
+
+.about-me__img--container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  video {
+    width: 100%;
+    height: auto;
+  }
 }

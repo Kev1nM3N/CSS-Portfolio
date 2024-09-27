@@ -36,13 +36,17 @@ video {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* background-color: rgba(0, 0, 0, 0.4); */
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .row {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+}
+
+section:nth-child(even){
+  background-color: #f8f8f8;
 }
 
 /*
@@ -129,7 +133,7 @@ nav {
   width: 100%;
 }
 
-.text-purple {
+.text-blue {
   color: var(--my-blue);
 }
 
@@ -162,6 +166,160 @@ nav {
   display: flex;
   justify-content: center;
   margin-top: 15px;
+}
+
+/*
+
+  THIS IS THE LANGUAGES
+      ||||||
+      VVVVVV
+
+*/
+
+.container {
+  padding: 50px 0;
+}
+
+.section__title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.language__img {
+  width: 100%;
+  max-width: 100px;
+  transition: all 200ms;
+}
+
+.language:hover .language__img {
+  filter: brightness(80%);
+  opacity: 0.86;
+  transform: scale(1.3) !important;
+}
+
+.language__list .language:last-child .language__img {
+  transform: scale(1.2);
+}
+
+.language {
+  position: relative;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+
+.language:hover .language__name {
+  transform: scale(1);
+}
+
+.language__img--wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.language__list {
+  display: flex;
+  width: 100%;
+}
+
+.language__name {
+  position: absolute;
+  bottom: -44px;
+  transform: scale(0);
+  transition: all 200ms;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/*
+
+  THIS IS THE PROJECTS
+      ||||||
+      VVVVVV
+
+*/
+
+.project { 
+  margin-bottom: 135px;
+}
+
+.project:last-child { /*This targets the project li class. The last one*/
+  margin-bottom: 40px;
+}
+
+.project:hover .project__wrapper::before { /*This allows us to hover over the target WHILE targeting the before pseudo class*/
+  opacity: 0.7;
+}
+
+.project__wrapper {
+  position: relative;
+  display: flex;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.project__wrapper::before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1c1d25;
+  transition: opacity 150ms;
+  z-index: 2;
+}
+
+.project:hover .project__description {
+  opacity: 1;
+  transform: translateY(-50%); /*Starting point*/
+}
+
+.project:hover .project__img {
+  transform: scale(1.07);
+  filter: blur(5px);
+}
+
+.project__img {
+  width: 100%;
+  transition: all 300ms;
+}
+
+.project__description {
+  position: absolute;
+  top: 50%; /*These two center it when using position absolute*/
+  left: 90px;
+  max-width: 600px;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(100%); /*These bottom two are the end point*/
+  transition: transform 300ms, opacity 200ms;
+}
+
+.project__description--title {
+  font-size: 40px;
+}
+
+.project__description--para {
+  margin: 16px 0;
+}
+
+.project__description--link {
+  font-size: 20px;
+  margin-right: 16px;
+  text-decoration: none;
+}
+
+.project__description--title,
+.project__description--sub-title,
+.project__description--para,
+.project__description--links,
+.project__description--link {
+    text-align: center;
+    color: #f8f8f8;
 }
 
 @media (min-aspect-ratio: 16/9) {

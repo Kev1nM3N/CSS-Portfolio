@@ -7,6 +7,10 @@
   font-family: "Nunito Sans", Helvetica, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --my-black: #242424;
   --my-white: #fff;
@@ -46,8 +50,33 @@ video {
 }
 
 section:nth-child(even){
-  background-color: #f8f8f8;
+  background-color: var(--my-white);
 }
+
+a {
+  position: relative;
+}
+
+.link__hover-effect::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background-color: var(--my-black);
+  width: 0;
+  right: 0;
+  bottom: -3px;
+  transition: all 200ms;
+}
+
+.link__hover-effect--white::before {
+  background-color: var(--my-white);
+}
+
+.link__hover-effect:hover::before {
+  width: 100%;
+  left: 0;
+}
+
 
 /*
 
@@ -122,6 +151,10 @@ nav {
 .about-me__info {
   display: flex;
   flex-direction: column;
+  background-color: var(--my-white);
+  border-radius: 18px;
+  opacity: 0.8;
+  padding: 20px 0;
 }
 
 .about-me__info--para {
@@ -291,12 +324,23 @@ nav {
 .project__description {
   position: absolute;
   top: 50%; /*These two center it when using position absolute*/
-  left: 90px;
   max-width: 600px;
   z-index: 3;
   opacity: 0;
   transform: translateY(100%); /*These bottom two are the end point*/
   transition: transform 300ms, opacity 200ms;
+}
+
+.project:first-child .project__description {
+  left: 160px;
+}
+
+.project:nth-child(2) .project__description {
+  left: 100px;
+}
+
+.project:last-child .project__description {
+  left: 112px;
 }
 
 .project__description--title {
@@ -320,6 +364,66 @@ nav {
 .project__description--link {
     text-align: center;
     color: #f8f8f8;
+}
+
+/*
+
+  THIS IS THE FOOTER
+      ||||||
+      VVVVVV
+
+*/
+
+footer {
+  background-color: var(--my-black);
+}
+
+.footer__social--list {
+  margin-bottom: 28px;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8% 0;
+}
+
+.footer__logo--img {
+  width: 150px;
+  filter: invert(1);
+}
+
+.footer__anchor {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.footer__anchor:hover .footer__logo--popper {
+  transform: translateX(65px);
+  opacity: 1;
+}
+
+.footer__social--link,
+.footer__copyright,
+.footer__logo--popper  {
+  color: var(--my-white);
+  text-decoration: none;
+}
+
+.footer__logo--popper {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  font-weight: 700;
+  font-size: large;
+  opacity: 0;
+  transition: 200ms ease;
 }
 
 @media (min-aspect-ratio: 16/9) {

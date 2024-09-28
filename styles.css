@@ -12,7 +12,7 @@ html {
 }
 
 :root {
-  --my-black: #242424;
+  --my-black: #131313;
   --my-white: #fff;
   --my-blue:  rgb(5, 5, 162);
 }
@@ -61,16 +61,16 @@ a {
   content: "";
   position: absolute;
   height: 3px;
-  background-color: var(--my-black);
+  background-color: var(--my-white);
   width: 0;
   right: 0;
   bottom: -3px;
   transition: all 200ms;
 }
 
-.link__hover-effect--white::before {
+/* .link__hover-effect--white::before {
   background-color: var(--my-white);
-}
+} */
 
 .link__hover-effect:hover::before {
   width: 100%;
@@ -99,6 +99,7 @@ nav {
 
 .personal__logo {
   width: 150px;
+  filter: contrast(170%);
 }
 
 .nav__link--list {
@@ -107,7 +108,7 @@ nav {
 
 .nav__link--anchor {
   margin: 0 12px;
-  color: var(--my-black);
+  color: var(--my-white);
   text-decoration: none;
   font-weight: 600;
 }
@@ -153,8 +154,8 @@ nav {
   flex-direction: column;
   background-color: var(--my-white);
   border-radius: 18px;
-  opacity: 0.8;
   padding: 20px 0;
+  opacity: 0.8;
 }
 
 .about-me__info--para {
@@ -164,6 +165,7 @@ nav {
 
 .about-me__picture {
   width: 100%;
+  opacity: 1;
 }
 
 .text-blue {
@@ -187,7 +189,7 @@ nav {
   font-size: 20px;
   color: var(--my-black);
   text-decoration: none;
-  padding: 0 4px;
+  margin: 0 8px;
 }
 
 .about-me__link:hover {
@@ -209,13 +211,20 @@ nav {
 
 */
 
+.container:first-child {
+  padding-bottom: 70px;
+}
+
 .container {
-  padding: 50px 0;
+  padding: 40px 0;
 }
 
 .section__title {
-  margin-bottom: 20px;
+  margin-bottom: 32px;
   text-align: center;
+  background-color: var(--my-white);
+  opacity: 0.8;
+  border-radius: 18px;
 }
 
 .language__img {
@@ -274,7 +283,7 @@ nav {
 */
 
 .project { 
-  margin-bottom: 135px;
+  margin-bottom: 100px;
 }
 
 .project:last-child { /*This targets the project li class. The last one*/
